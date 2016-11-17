@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SearchListViewController.h
 //  Acromine
 //
 //  Created by Abhishek Tyagi on 11/17/16.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController {
-    
-    __weak IBOutlet UITextField *searchTextField;
-}
-
+@interface SearchListViewController : UITableViewController
 
 @end
-
