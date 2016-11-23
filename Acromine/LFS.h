@@ -15,4 +15,6 @@
 @property(nonatomic, strong) NSString   *since;
 @property(nonatomic, strong) NSArray    *vars;
 
++ (NSArray *)allPropertyNames;
+
 @end

@@ -38,14 +38,40 @@ static Acronyms *instance =nil;
 }
 
 
+//+ (void)addLFInInstance:(NSDictionary*)lfDict {
+//    LFS *lfs = [[LFS alloc] init];
+//    lfs.lf = [lfDict objectForKey:@"lf"];
+//    lfs.freq = [[lfDict objectForKey:@"freq"] stringValue];
+//    lfs.since = [[lfDict objectForKey:@"since"] stringValue];
+//    lfs.vars = [lfDict objectForKey:@"vars"];
+//    
+//    [instance.lfsArray addObject:lfs];
+//}
+
 + (void)addLFInInstance:(NSDictionary*)lfDict {
     LFS *lfs = [[LFS alloc] init];
-    lfs.lf = [lfDict objectForKey:@"lf"];
-    lfs.freq = [[lfDict objectForKey:@"freq"] stringValue];
-    lfs.since = [[lfDict objectForKey:@"since"] stringValue];
-    lfs.vars = [lfDict objectForKey:@"vars"];
+    for (NSString *key in lfDict)
+    {
+        if ([self containsKey:key inObject:lfs]) {
+            id value = lfDict[key];
+            if (value != [NSNull null] && value != nil)
+            {
+                if (![value isKindOfClass:[NSDictionary class]] && ![value isKindOfClass:[NSArray class]]) {
+                    value = [NSString stringWithFormat:@"%@",value];
+                }
+                [lfs setValue:value forKey:key];
+            }
+        }
+    }
     
     [instance.lfsArray addObject:lfs];
+}
+
++ (BOOL)containsKey:(NSString *)key inObject:(id)obj {
+    BOOL retVal = 0;
+    NSArray *allKeys = [LFS allPropertyNames];
+    retVal = [allKeys containsObject:key];
+    return retVal;
 }
 
 + (void)clearAcronymInstance {

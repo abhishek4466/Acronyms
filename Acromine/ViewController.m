@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
+#import "Constants.h"
 #import "Acronyms.h"
 
 @interface ViewController ()
@@ -39,7 +40,7 @@
 
 - (void)sendingAPIRequestToGetTheAcronyms {
     [self.view endEditing:YES];
-    NSString *urlString = [NSString stringWithFormat:@"http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=%@",searchTextField.text];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",apiUrl,searchTextField.text];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:urlString]];
     [httpClient getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -56,7 +57,7 @@
             [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"searchListView"] animated:YES];
         }
         else {
-            [self showTitle:@"Acronyms" withMessage:@"No result found. Try some other letters."];
+            [self showTitle:applicationName withMessage:@"No result found. Try some other letters."];
         }
         
         

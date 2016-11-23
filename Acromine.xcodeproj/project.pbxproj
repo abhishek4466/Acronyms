@@ -140,6 +140,7 @@
 		D556437F1DDE378600A30A74 /* LFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFS.m; sourceTree = "<group>"; };
 		D55643811DDE3E6000A30A74 /* CustomResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomResultCell.h; sourceTree = "<group>"; };
 		D55643821DDE3E6000A30A74 /* CustomResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomResultCell.m; sourceTree = "<group>"; };
+		D562E47C1DE6454500467CB8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +363,7 @@
 		D556437A1DDE34B100A30A74 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D562E47C1DE6454500467CB8 /* Constants.h */,
 				D556437B1DDE34D300A30A74 /* Acronyms.h */,
 				D556437C1DDE34D300A30A74 /* Acronyms.m */,
 				D556437E1DDE378600A30A74 /* LFS.h */,
@@ -766,6 +768,7 @@
 				D556431A1DDE27AE00A30A74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D556431B1DDE27AE00A30A74 /* Build configuration list for PBXNativeTarget "AcromineTests" */ = {
 			isa = XCConfigurationList;
@@ -774,6 +777,7 @@
 				D556431D1DDE27AE00A30A74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D556431E1DDE27AE00A30A74 /* Build configuration list for PBXNativeTarget "AcromineUITests" */ = {
 			isa = XCConfigurationList;
@@ -782,6 +786,7 @@
 				D55643201DDE27AE00A30A74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
